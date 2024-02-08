@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "moment": "^2.30.1",
+    "mongoose": "^8.1.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.7.1",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.0.2",
+    "uuid": "^9.0.1"
+  },
+  "scripts": {
+    "start": "npm run kill-port && node index.js",
+    "kill-port": "taskkill /F /FI \"PID eq $(netstat -ano | findstr \"8080\")\""
+  }
+}
