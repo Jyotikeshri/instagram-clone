@@ -1,0 +1,125 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Add full height to the body */
+  margin: 0; /* Remove default body margin */
+}
+
+.submit {
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Add pointer cursor on hover */
+  background-color: rgb(100, 100, 200);
+  color: black;
+  width: 100px;
+  height: 30px;
+  position: relative;
+  top: 40px;
+
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#output {
+  width: 250px;
+  height: 300px;
+  border: none;
+  outline: none;
+}
+
+input[type="text"] {
+  opacity: 0;
+}
+
+#location {
+  opacity: 1;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  top: 20px;
+  width: 400px;
+  height: 20px;
+}
+
+#image {
+  opacity: 1;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  width: 400px;
+  height: 20px;
+  top: -10px;
+}
+
+input::file-selector-button {
+  font-weight: bold;
+  position: relative;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(100, 100, 200);
+  border: none;
+  border-radius: 8px;
+  display: block;
+  transition: 1s;
+  margin-bottom: 10px;
+  left: 75px;
+  top: 20px;
+}
+
+input::file-selector-button:hover {
+  background-color: #81ecec;
+}
+
+input[type="file"] {
+  color: rgb(50, 50, 50);
+  position: relative;
+  top: -20px;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+textarea {
+  width: 500px;
+  position: relative;
+
+  resize: none;
+  height: 200px;
+  background-color: rgb(30, 30, 30);
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.form-container {
+  width: 800px;
+  height: 900px;
+  border-radius: 8px;
+  border: 2px solid rgb(50, 50, 50); /* Add 'solid' to specify border style */
+  padding: 20px; /* Add padding for content inside the container */
+  box-sizing: border-box; /* Include padding in the total width and height */
+  background-color: #333; /* Add a background color */
+  color: white; /* Set text color */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+
+  align-items: center;
+}
+
+/* .image {
+  width: 100px;
+  height: 20px;
+  color: black !important;
+  background-color: rgb(100, 100, 100);
+} */

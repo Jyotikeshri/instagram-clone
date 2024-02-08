@@ -1,0 +1,171 @@
+body {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow-y: hidden; */
+}
+
+form {
+  width: 1200px;
+  height: 850px;
+  background-color: rgb(20, 20, 20);
+  position: relative;
+  top: 10px;
+}
+.photo {
+  width: 750px;
+  height: 100%;
+  border-right: 1px solid rgb(58, 58, 58);
+}
+
+#output {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* .photo img {
+  width: 750px;
+  height: 850px;
+} */
+
+.profile {
+  width: 450px;
+  height: 70px;
+  border-bottom: 1px solid rgb(58, 58, 58);
+  position: relative;
+  top: -850px;
+  left: 748px;
+}
+.profile img {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  top: 10px;
+  left: 20px;
+}
+
+.pro img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+.profile span {
+  color: white;
+  position: relative;
+  left: 40px;
+  font-size: 17px;
+  top: -15px;
+}
+.pro span {
+  color: white;
+  position: relative;
+  left: 30px;
+  font-size: 17px;
+  top: -10px;
+  margin-right: 20px;
+}
+
+.all-comments .comment {
+  width: 90%;
+  height: 60px;
+
+  margin: 5px;
+  margin-left: 20px;
+
+  margin-bottom: 10px;
+  color: white;
+  position: relative;
+  /* left: 20px; */
+  top: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.all-comments .comment img {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  left: 10px;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.comment .userss {
+  display: inline-block;
+  font-family: 700;
+  font-size: 15px;
+  position: relative;
+  left: 20px;
+  top: -10px;
+}
+
+.comment .content {
+  display: inline-block;
+  font-size: 15px;
+  opacity: 0.8;
+  width: 50%;
+  position: relative;
+  top: -10px;
+  left: 25px;
+  margin-left: 5px;
+}
+
+.comment .date {
+  display: inline-block;
+  position: relative;
+  opacity: 0.5;
+  font-size: 10px;
+  top: 11px;
+  left: 20px;
+  width: 90px;
+}
+
+.comment:hover {
+  background-color: rgba(38, 38, 38, 0.7);
+  border-radius: 20px;
+}
+textarea {
+  background-color: transparent;
+  color: white;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  resize: none;
+}
+
+.add-comment button {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  position: relative;
+  top: -180px;
+  left: 380px;
+}
+
+.show-comments {
+  /* border: 1px solid rgb(58, 58, 58); */
+  height: 580px;
+  position: relative;
+  width: 450px;
+  left: 749px;
+  top: -300px;
+  top: -850px;
+}
+
+.add-comment {
+  width: 450px;
+  height: 200px;
+  border-top: 1px solid rgb(58, 58, 58);
+  position: relative;
+  top: -852px;
+  left: 750px;
+}
