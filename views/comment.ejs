@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Comment</title>
+    <link rel="stylesheet" href="/comment.css" />
+  </head>
+  <body>
+    <form action="/comments" method="post">
+      <input type="hidden" name="post_id" id="" value="<%=post._id%>" />
+      <input type="hidden" name="user_id" id="" value="<%=user_id%>" />
+
+      <div class="photo">
+        <img src="<%=post.image %>" alt="" id="output" />
+      </div>
+      <div class="profile">
+        <img src="<%=post.pfp %>" alt="" />
+        <span><%= post.username %></span>
+      </div>
+      <div class="show-comments">
+        <div class="pro">
+          <img src="<%= post.pfp%>" alt="" />
+          <span><b><%= post.username %></b></span>
+          <span><i><%= post.caption %></i></span>
+        </div>
+        <div class="all-comments">
+          <% for(let comment of post.comments ){%>
+          <div class="comment">
+            <img src="<%=comment.pfp %>" alt="" />
+            <div class="userss"><%=comment.postedBy %></div>
+            <div class="content"><%= comment.text %></div>
+            <div class="date">
+              <%=comment.date.toString().split(" ").slice(0, 4).join(" ") %>
+            </div>
+          </div>
+
+          <%} %>
+        </div>
+      </div>
+      <div class="add-comment">
+        <textarea
+          name="comment"
+          id="comm"
+          cols="30"
+          rows="10"
+          placeholder="Add a Comment..."
+        ></textarea>
+        <button type="submit" onclick="sendComment()">Post</button>
+      </div>
+    </form>
+  </body>
+</html>

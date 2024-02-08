@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram</title>
+    <link rel="stylesheet" href="/index.css" />
+    <style>
+        body{
+            overflow-y: hidden;
+        }
+      .more-div{
+        position: relative;
+        top: 800px;
+        left: -30px;
+      }
+      .ac13
+         {
+    left: 700px;
+    top: -10px;
+      }
+      i{
+        z-index: 10;
+        color: white;
+      }
+      .fa-heart{
+        position: relative;
+        top: -5px;
+      }
+      .profile{
+        position: relative;
+        top: -900px;
+      }
+    </style>
+  </head>
+  <body>
+
+      
+   
+      <div class="sidebar">
+        
+        <div class="ab">
+          <div class="ab1">
+            <div class="ab12">
+              <div class="ab121">
+                <a href="">Instagram</a>
+              </div>
+            </div>
+            <div class="ab13">
+              <div class="ab131">
+                <a href=""
+                  ><img
+                    class="nav-icon1"
+                    src="/assets/icons8-home-50.png"
+                    alt="home"
+                  />
+                  <div class="home">Home</div></a
+                >
+              </div>
+              
+              <div class="ab133 ab130">
+                <a href="/posts/explore/<%=user._id %>"
+                  ><img
+                    class="nav-icon3"
+                    src="/assets/explore-icon.png"
+                    alt="home"
+                  />
+                  <div class="home explore">Explore</div></a
+                >
+              </div>
+              
+             
+              
+              <div class="ab137 ab130">
+              
+                  <a href="/posts/<%= user._id%>/new"
+                    ><img
+                      class="nav-icon7"
+                      src="/assets/create-icon.png"
+                      alt="home"
+                    />
+                    <div class="home create">Create</div></a
+                  >
+                
+              </div>
+              <div class="ab138 ab130">
+                
+                  <a href="posts/profile/<%= user._id %>">
+                    <img class="nav-icon8 pfp" src="<%=user.pfp %>" alt="" />
+                    <div class="home">Profile</div>
+                  </a>
+                
+              </div>
+            </div>
+            
+              <div class="ab130 more-div">
+                <a href="/"
+                  ><img
+                    class="nav-icon10"
+                    src="/assets/icons8-more-50.png"
+                    alt="home"
+                  />
+                  <div class="logOut"></div>
+
+                  <div class="home more">Log Out</div></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ac13">
+        <div class="ac131">
+          <div class="ae">
+            <div class="ae1">
+              <article>
+              
+                <div class="ar1">
+                  <div class="ar11">
+                    <header>
+                      <div class="ah1">
+                      <form action="/posts/profile/<%=post.user_id %>/<%= user._id %>">
+                        <button type="submit" class="post_user">
+                          <img src="<%=post.pfp %>" alt="" />
+                
+                      </div>
+                      <div class="ah2">
+                        <div class="ah21">
+                          <div class="ah211">
+                            <a href="/posts/profile/<%=post.user_id %>/<%= user._id %>"><%= post.username %></a>
+                          </div>
+                        </button>
+                        </form>
+                          <div class="ah212">
+                            <span>
+                              <img src="/assets/full-stop.png" alt="" />
+                            </span>
+                            <time
+                              datetime="<%= post.date.toISOString() %>"
+                            >
+                              <%= post.date.toString().split(" ").slice(0,
+                              4).join(" ") %>
+                            </time>
+                          </div>
+                        </div>
+                        <div class="ah22">
+                          <a href=""><%=post.location%></a>
+                        </div>
+                      </div>
+                    </header>
+                    <div class="ar111">
+                      <a href=""><img src="/assets/dots.png" alt="" /></a>
+                    </div>
+                  </div>
+                  <div class="ar12">
+                    <div class="ar121">
+                      <img src="<%=post.image %>" alt="" />
+                    </div>
+                  </div>
+                  <div class="ar13">
+                    <section class="ar132">
+                      <form
+                        action="/likes?_method=PATCH"
+                        method="post"
+                      >
+                      <input type="hidden" name="post_id" id="" value="<%=post._id %>">
+                      <input type="hidden" name="user_id" id="" value="<%=user._id %>">
+                      <button class="like-btn">
+                        <span
+                          class="like"
+                          data-likes-count="0"
+                          data-post-id="<%=post._id %>"
+                          data-user-id="<%=user._id%>"
+                        >
+                          <!-- <img
+                          class="s"
+                          src="/assets/heart-icon.png"
+                          alt=""
+                        /> -->
+                          <i
+                            class="fa-regular fa-heart"
+                            style="color: #ffffff"
+                          ></i>
+                        </span>
+                      </button>
+                      </form>
+                      <form
+                        action="/comment/<%= post._id %>/<%=user._id %>"
+                      >
+                        <button type="submit" class="like-btn">
+                          <span>
+                            <!-- <img src="/assets/comment.png" alt=""
+                      /> -->
+                            <i
+                              class="fa-regular fa-comment"
+                              style="color: #ffffff"
+                            ></i>
+                          </span>
+                        </button>
+                      </form>
+                      <span>
+                        <!-- <img src="/assets/messages-icon.png" alt="" /> -->
+                        <i
+                          class="fa-regular fa-paper-plane"
+                          style="color: #ffffff"
+                        ></i>
+                      </span>
+                      <span class="book" data_bookmark_count="0">
+                        <!-- <img
+                          class="margin"
+                          src="/assets/ribbon.png"
+                          alt=""
+                      /> -->
+                        <i
+                          class="fa-regular fa-bookmark margin"
+                          style="color: #ffffff"
+                        ></i>
+                      </span>
+                    </section>
+                    <section class="ar133">
+                      <div class="ar1331">
+                        <span><%=post.likes_users.length %> likes </span>
+                      </div>
+                    </section>
+                    <div class="ar131">
+                      <b><%= post.username %></b>
+                      &nbsp; <%=post.caption%>
+                    </div>
+                    <section class="ar134">
+                      <div class="ar1341">
+                        View all <%=post.comments.length %> comments
+                      </div>
+                      <form
+                        action="/comment/<%= post._id%>/<%=user._id %>"
+                        method="get"
+                      >
+                        <button type="submit" class="comm">
+                          <div class="ar1342">Add a comment....</div>
+                        </button>
+                      </form>
+                    </section>
+                  </div>
+                </div>
+              
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script
+    src="https://kit.fontawesome.com/726e005309.js"
+    crossorigin="anonymous"
+  ></script>
+  </body>
+  </html>

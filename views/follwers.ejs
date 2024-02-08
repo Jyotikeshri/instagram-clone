@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/instagram.png" />
+    <title>Followers</title>
+
+    <!-- <link rel="stylesheet" href="/css/profile.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Salsa&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <link rel="stylesheet" href="/followers.css" />
+    <!-- <style>
+      .material-symbols-rounded {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="main">
+      <div class="sidebar">
+        <div class="ab">
+          <div class="ab1">
+            <div class="ab12">
+              <div class="ab121">
+                <a href="">Instagram</a>
+              </div>
+            </div>
+            <div class="ab13">
+              <form action="/posts/<%= user._id %>" method="get">
+                <div class="ab131">
+                  <button type="submit">
+                    <a href="/posts/<%= user._id %>">
+                      <!-- <img
+                        class="nav-icon1"
+                        src="/assets/icons8-home-50.png"
+                        alt="home"
+                      /> -->
+
+                      <div class="home">
+                        <i class="fa-solid fa-house" style="color: #ffffff"></i
+                        >Home
+                      </div></a
+                    >
+                  </button>
+                </div>
+              </form>
+
+              <div class="ab133 ab130">
+                <a href="/posts/explore/<%=user._id %>">
+                  <!-- <img
+                        class="nav-icon3"
+                        src="/assets/explore-icon.png"
+                        alt="home"
+                      /> -->
+                  <div class="home explore">
+                    <i class="fa-regular fa-compass" style="color: #ffffff"></i
+                    >Explore
+                  </div></a
+                >
+              </div>
+
+              <div class="ab137 ab130">
+                <a href="/posts/<%= user._id %>/new">
+                  <!-- <img
+                        class="nav-icon7"
+                        src="/assets/create-icon.png"
+                        alt="home"
+                      /> -->
+                  <div class="home create">
+                    <i
+                      class="fa-solid fa-circle-plus"
+                      style="color: #ffffff"
+                    ></i
+                    >Create
+                  </div></a
+                >
+              </div>
+              <div class="ab138 ab130">
+                <a href="/posts/profile/<%= user._id %>">
+                  <!-- <img
+                        class="nav-icon8"
+                        src="/assets/profile-icon.png"
+                        alt=""
+                      /> -->
+                  <img src="<%=user.pfp %>" alt="" />
+                  <div class="home">Profile</div>
+                </a>
+              </div>
+            </div>
+            <div class="ab14">
+              <div class="ab130">
+                <a href="">
+                  <!-- <img
+                        class="nav-icon9"
+                        src="/assets/threads.png"
+                        alt="home"
+                      /> -->
+                  <div class="home threads">
+                    <i class="fa-brands fa-threads" style="color: #ffffff"></i
+                    >Threads
+                  </div></a
+                >
+              </div>
+              <div class="ab130">
+                <a href="">
+                  <!-- <img
+                        class="nav-icon10"
+                        src="/assets/icons8-more-50.png"
+                        alt="home"
+                      /> -->
+                  <div class="home more">
+                    <i class="fa-solid fa-grip-lines" style="color: #ffffff"></i
+                    >More
+                  </div></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="search-bar">
+        <div class="search">
+
+          <span class="material-symbols-rounded"> search </span>
+          <input type="text" placeholder="Search Username " name="search" />
+        </div>
+      </div> -->
+
+      <div class="list">
+        <div class="followers">
+          <h2 style="width: 1400px" class="follow">
+            Accounts who follow <%=profile.username %>
+          </h2>
+          <%for(let follower of followers ){ %>
+
+          <div class="follower">
+            <img src="<%= follower.photo%>" alt="" />
+            <p><%= follower.name %></p>
+          </div>
+          <%} %>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/726e005309.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

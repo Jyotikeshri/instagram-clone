@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .post {
+        display: flex;
+        width: 100vh;
+        height: 8000px;
+        justify-content: center;
+        flex-direction: row;
+      }
+      .one {
+        width: 500px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .one div {
+        font-size: 16px;
+        color: blue;
+      }
+
+      .img {
+        width: 250px;
+        height: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="post">
+      <%for(let post of posts){%>
+      <div class="one">
+        <h2><%= post.title %></h2>
+        <h3><%= post.user %></h3>
+        <p><%= post.content %></p>
+        <div><%=post.date %></div>
+        <img class="img" src="/assets/pfp.jpg" alt="" />
+      </div>
+      <% }%>
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>

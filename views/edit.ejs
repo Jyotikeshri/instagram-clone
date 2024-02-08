@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile ~ Instagram</title>
+    <link rel="stylesheet" href="/edit.css" />
+  </head>
+  <body>
+    <h2>Edit Profile</h2>
+    <form action="/posts/profile/new" method="post">
+      <div class="photo">
+        <input type="text" name="image" onchange="loadFile(event)" id="image" />
+        <img src="" alt="" id="output" />
+        <h3>Enter Image URL</h3>
+      </div>
+      <div class="username">
+        <input type="text" name="username" id="username" />
+      </div>
+      <input type="hidden" name="id" id="" value="<%=post._id %>" />
+      <div class="bio">
+        <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+      </div>
+      <div class="gender">
+        <select name="gender" id="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+          <option value="Prefer Not to Say">Prefer not to say</option>
+        </select>
+      </div>
+      <button type="submit">Save Changes</button>
+    </form>
+  </body>
+  <script>
+    const loadFile = function (event) {
+      var input = document.getElementById("image");
+      var output = document.getElementById("output");
+      output.src = input.value;
+    };
+
+    document
+      .querySelector(".form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        fetch("/getUploadedImageUrl", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            filename: document.getElementById("image").value,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => console.error(error));
+
+        this.submit();
+      });
+  </script>
+</html>

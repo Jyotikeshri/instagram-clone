@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram</title>
+    <link rel="stylesheet" href="/index.css" />
+    <style>
+      .more-div{
+        position: relative;
+        top: 800px;
+        left: -30px;
+      }
+      .ac112{
+        width: 470px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        position: relative;
+        left: 75px;
+        scrollbar-color:  rgb(20,20,20) black;
+        scrollbar-width: thin;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="search-bar">
+      <div class="ab">
+        <div class="ab1">
+          <div class="ab12">
+            <div class="ab121">
+              <a href="">Instagram</a>
+            </div>
+          </div>
+          <div class="ab13">
+            <div class="ab131">
+              <a href=""
+                ><img
+                  class="nav-icon1"
+                  src="/assets/icons8-home-50.png"
+                  alt="home"
+                />
+                <div class="home">Home</div></a
+              >
+            </div>
+            <div class="ab132 ab130">
+              <a href=""
+                ><img
+                  class="nav-icon2"
+                  src="/assets/search-icon.png"
+                  alt="home"
+                />
+                <div class="home search">Search</div></a
+              >
+            </div>
+            <div class="ab133 ab130">
+              <a href=""
+                ><img
+                  class="nav-icon3"
+                  src="/assets/explore-icon.png"
+                  alt="home"
+                />
+                <div class="home explore">Explore</div></a
+              >
+            </div>
+            <div class="ab134 ab130">
+              <a href=""
+                ><img
+                  class="nav-icon4"
+                  src="/assets/reels-icon.png"
+                  alt="home"
+                />
+                <div class="home reels">Reels</div></a
+              >
+            </div>
+            <div class="ab135 ab130">
+              <a href=""
+                ><img
+                  class="nav-icon5"
+                  src="/assets/messages-icon.png"
+                  alt="home"
+                />
+                <div class="home mesaages">Messages</div></a
+              >
+            </div>
+            <div class="ab136 ab130">
+              <a href=""
+                ><img
+                  class="nav-icon6"
+                  src="/assets/heart-icon.png"
+                  alt="home"
+                />
+                <div class="home Notifications">Notifications</div></a
+              >
+            </div>
+            <div class="ab137 ab130">
+              <form action="/posts/<%= user._id%>/new" method="get">
+                <a href="/posts/<%= user._id%>/new"
+                  ><img
+                    class="nav-icon7"
+                    src="/assets/create-icon.png"
+                    alt="home"
+                  />
+                  <div class="home create">Create</div></a
+                >
+              </form>
+            </div>
+            <div class="ab138 ab130">
+              <form method="get" action="posts/profile/<%= user._id %>">
+                <a href="posts/profile/<%= user._id %>">
+                  <img class="nav-icon8 pfp" src="<%=user.pfp %>" alt="" />
+                  <div class="home">Profile</div>
+                </a>
+              </form>
+            </div>
+          </div>
+          <div class="ab14">
+            <div class="ab130">
+              <a href=""
+                ><img
+                  class="nav-icon9"
+                  src="/assets/threads.png"
+                  alt="home"
+                />
+                <div class="home threads">Threads</div></a
+              >
+            </div>
+            <div class="ab130 more-div">
+              <a href="/"
+                ><img
+                  class="nav-icon10"
+                  src="/assets/icons8-more-50.png"
+                  alt="home"
+                />
+                <div class="logOut"></div>
+
+                <div class="home more">Log Out</div></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div> -->
+    <div class="whole">
+      <div class="sidebar">
+        
+        <div class="ab">
+          <div class="ab1">
+            <div class="ab12">
+              <div class="ab121">
+                <a href="">Instagram</a>
+              </div>
+            </div>
+            <div class="ab13">
+              <div class="ab131">
+                <a href=""
+                  ><img
+                    class="nav-icon1"
+                    src="/assets/icons8-home-50.png"
+                    alt="home"
+                  />
+                  <div class="home">Home</div></a
+                >
+              </div>
+              
+              <div class="ab133 ab130">
+                <a href="/posts/explore/<%=user._id %>"
+                  ><img
+                    class="nav-icon3"
+                    src="/assets/explore-icon.png"
+                    alt="home"
+                  />
+                  <div class="home explore">Explore</div></a
+                >
+              </div>
+              
+             
+              
+              <div class="ab137 ab130">
+                <form action="/posts/<%= user._id%>/new" method="get">
+                  <a href="/posts/<%= user._id%>/new"
+                    ><img
+                      class="nav-icon7"
+                      src="/assets/create-icon.png"
+                      alt="home"
+                    />
+                    <div class="home create">Create</div></a
+                  >
+                </form>
+              </div>
+              <div class="ab138 ab130">
+                <form method="get" action="posts/profile/<%= user._id %>">
+                  <a href="posts/profile/<%= user._id %>">
+                    <img class="nav-icon8 pfp" src="<%=user.pfp %>" alt="" />
+                    <div class="home">Profile</div>
+                  </a>
+                </form>
+              </div>
+            </div>
+            
+              <div class="ab130 more-div">
+                <a href="/"
+                  ><img
+                    class="nav-icon10"
+                    src="/assets/icons8-more-50.png"
+                    alt="home"
+                  />
+                  <div class="logOut"></div>
+
+                  <div class="home more">Log Out</div></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page">
+        <section class="ac">
+          <div class="ac1">
+            <div class="ac11"></div>
+            <div class="ac12">
+              <div class="ac111">
+                <div class="ac112">
+                  <ul>
+                    <% for(let profile of all_users){%>
+                    <li>
+                      <div class="ad">
+                        <form action="/posts/profile/<%= profile._id%>/<%=user._id %>">
+                        <button>
+                          <div class="ad1">
+                            <span>
+                              <img src="<%=profile.pfp %>" alt="" />
+                            </span>
+                          </div>
+                        </button>
+                      </form>
+                      </div>
+                    </li>
+                    <% }%>
+                   
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+            <div class="ac13">
+              <div class="ac131">
+                <div class="ae">
+                  <div class="ae1">
+                    <article>
+                      <%for(let post of posts){%>
+                      <div class="ar1">
+                        <div class="ar11">
+                          <header>
+                            <div class="ah1">
+                            <form action="/posts/profile/<%=post.user_id %>/<%= user._id %>">
+                              <button type="submit" class="post_user">
+                                <img src="<%=post.pfp %>" alt="" />
+                      
+                            </div>
+                            <div class="ah2">
+                              <div class="ah21">
+                                <div class="ah211">
+                                  <a href="/posts/profile/<%=post.user_id %>/<%= user._id %>"><%= post.username %></a>
+                                </div>
+                              </button>
+                              </form>
+                                <div class="ah212">
+                                  <span>
+                                    <img src="/assets/full-stop.png" alt="" />
+                                  </span>
+                                  <time
+                                    datetime="<%= post.date.toISOString() %>"
+                                  >
+                                    <%= post.date.toString().split(" ").slice(0,
+                                    4).join(" ") %>
+                                  </time>
+                                </div>
+                              </div>
+                              <div class="ah22">
+                                <a href=""><%=post.location%></a>
+                              </div>
+                            </div>
+                          </header>
+                          <div class="ar111">
+                            <a href=""><img src="/assets/dots.png" alt="" /></a>
+                          </div>
+                        </div>
+                        <div class="ar12">
+                          <div class="ar121">
+                            <img src="<%=post.image %>" alt="" />
+                          </div>
+                        </div>
+                        <div class="ar13">
+                          <section class="ar132">
+                            <!-- <form
+                              action="/likes/<%= post._id %>?_METHOD=PATCH"
+                              method="post"
+                            > -->
+                            <button class="like-btn">
+                              <span
+                                class="like"
+                                data-likes-count="0"
+                                data-post-id="<%=post._id %>"
+                                data-user-id="<%=user._id%>"
+                              >
+                                <!-- <img
+                                class="s"
+                                src="/assets/heart-icon.png"
+                                alt=""
+                              /> -->
+                                <i
+                                  class="fa-regular fa-heart"
+                                  style="color: #ffffff"
+                                ></i>
+                              </span>
+                            </button>
+                            <!-- </form> -->
+                            <form
+                              action="/comment/<%= post._id %>/<%=user._id %>"
+                            >
+                              <button type="submit" class="like-btn">
+                                <span>
+                                  <!-- <img src="/assets/comment.png" alt=""
+                            /> -->
+                                  <i
+                                    class="fa-regular fa-comment"
+                                    style="color: #ffffff"
+                                  ></i>
+                                </span>
+                              </button>
+                            </form>
+                            
+                          </section>
+                          <section class="ar133">
+                            <div class="ar1331">
+                              <span><%=post.likes_users.length %> likes </span>
+                            </div>
+                          </section>
+                          <div class="ar131">
+                            <b><%= post.username %></b>
+                            &nbsp; <%=post.caption%>
+                          </div>
+                          <section class="ar134">
+                            <div class="ar1341">
+                              View all <%=post.comments.length %> comments
+                            </div>
+                            <form
+                              action="/comment/<%= post._id%>/<%=user._id %>"
+                              method="get"
+                            >
+                              <button type="submit" class="comm">
+                                <div class="ar1342">Add a comment....</div>
+                              </button>
+                            </form>
+                          </section>
+                        </div>
+                      </div>
+                      <% }%>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ac2"></div>
+        </section>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/726e005309.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    // const books = document.querySelectorAll(".book");
+
+    // books.forEach((book) => {
+
+    //   const bookmark = book.querySelector(".fa-bookmark");
+    //   let bookmark_count =
+    //     parseInt(book.getAttribute("data-bookmark-count"), 10) || 0;
+    //   let isBookmarked = false;
+
+    //   bookmark.addEventListener("click", () => {
+    //     if (!isBookmarked) {
+    //       bookmark.classList.remove("fa-regular");
+    //       bookmark.classList.add("fa-solid");
+    //       bookmark.style.color = "white";
+    //       bookmark.style.opacity = "1";
+    //       isBookmarked = true;
+    //       bookmark_count = bookmark_count + 1;
+    //     } else {
+    //       bookmark.classList.remove("fa-solid");
+    //       bookmark.classList.add("fa-regular");
+    //       bookmark.style.color = "white";
+    //       bookmark.style.opacity = "0.7";
+    //       isBookmarked = false;
+    //       bookmark_count = bookmark_count - 1;
+    //     }
+
+    //     book.setAttribute("data-bookmark-count", bookmark_count);
+
+    //     console.log(bookmark_count);
+    //   });
+    // });
+    // const more = document.querySelector(".more");
+    // const logout = document.querySelector(".logOut");
+
+    // more.addEventListener("click", () => {
+    //   // Set the opacity to 1 to show the logout button
+    //   logout.style.opacity = "1";
+
+    //   // Automatically remove the "visible" class after 10 seconds
+    //   setTimeout(() => {
+    //     logout.style.opacity = "0";
+    //   }, 10000);
+    // });
+
+    const likes = document.querySelectorAll(".like");
+
+    likes.forEach((like) => {
+      const heart = like.querySelector(".fa-heart");
+      let isLiked = false;
+      let likes_count = 0;
+
+      heart.addEventListener("click", async () => {
+        console.log("liked");
+        if (!isLiked) {
+          heart.classList.remove("fa-regular");
+          heart.classList.add("fa-solid");
+          heart.style.color = "red";
+          heart.style.opacity = "1";
+          isLiked = true;
+          likes_count = likes_count + 1;
+
+          // Call the function to handle API request
+          likePost(like);
+        } else {
+          heart.classList.remove("fa-solid");
+          heart.classList.add("fa-regular");
+          heart.style.color = "white";
+          heart.style.opacity = "0.7";
+          isLiked = false;
+          likes_count = likes_count - 1;
+          unlikePost(like);
+        }
+
+        // Send likes data to the server
+        // await sendLikesDataToServer({
+        //   postId: like.getAttribute("data-post-id"),
+        //   likesCount: likes_count,
+        // });
+
+        console.log(likes_count); // Log the updated likes_count
+      });
+    });
+    function likePost(like) {
+      const post_id = like.getAttribute("data-post-id");
+      const user_id = like.getAttribute("data-user-id");
+      console.log("user id:", user_id);
+      let likes_count = parseInt(like.getAttribute("data-likes-count")) || 0;
+
+      fetch(`http://localhost:8080/likes`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json", // Specify content type as JSON
+        },
+        body: JSON.stringify({
+          likesCount: likes_count,
+          post_id: post_id,
+          user_id: user_id,
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            console.error(
+              `Failed to update likes on the server. Status: ${response.status}`
+            );
+          } else {
+            console.log("Likes updated successfully");
+          }
+        })
+        .catch((error) => {
+          console.error("Error while updating likes:", error);
+        });
+    }
+    function unlikePost(like) {
+      const post_id = like.getAttribute("data-post-id");
+      const user_id = like.getAttribute("data-user-id");
+      console.log("user id:", user_id);
+      let likes_count = parseInt(like.getAttribute("data-likes-count")) || 0;
+
+      fetch(`http://localhost:8080/unlike`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json", // Specify content type as JSON
+        },
+        body: JSON.stringify({
+          likesCount: likes_count,
+          post_id: post_id,
+          user_id: user_id,
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            console.error(
+              `Failed to update likes on the server. Status: ${response.status}`
+            );
+          } else {
+            console.log("Likes updated successfully");
+          }
+        })
+        .catch((error) => {
+          console.error("Error while updating likes:", error);
+        });
+    }
+  </script>
+</html>

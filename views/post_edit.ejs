@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create~post</title>
+    <link rel="stylesheet" href="/create.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <form method="post" action="/posts/<%=id %>?_method=PATCH" class="form">
+        <input type="hidden" id="imageFilename" name="imageFilename" />
+
+        <h2>Add the image</h2>
+        <img src="/assets/image.png" alt="" />
+
+        <input type="text" name="id" value="<%=id%>" />
+        <input type="hidden" name="user_id" id="" />
+
+        <!-- <input
+          type="file"
+          name="image"
+          id="imageInput"
+          accept="image/*"
+          class="image"
+        /> -->
+        <!-- <input
+          type="file"
+          name="image"
+          accept="image/*"
+          onchange="loadFile(event)"
+        /> -->
+        <input type="text" name="image" onchange="loadFile(event)" id="image" />
+        <img id="output" src="<%=post.image %>" />
+        <br />
+        <br />
+        <br />
+        <textarea
+          class="caption"
+          name="caption"
+          id="captionInput"
+          placeholder="Enter your caption"
+        ></textarea>
+        <input
+          type="text"
+          name="location"
+          id="location"
+          placeholder="enter the location"
+        />
+        <button type="submit" class="submit">share</button>
+      </form>
+    </div>
+    <script src="/public/app.js"></script>
+  </body>
+  <script>
+    const loadFile = function (event) {
+      var input = document.getElementById("image");
+      var output = document.getElementById("output");
+      output.src = input.value;
+    };
+
+    document
+      .querySelector(".form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        fetch("/getUploadedImageUrl", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            filename: document.getElementById("image").value,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => console.error(error));
+
+        this.submit();
+      });
+  </script>
+</html>
